@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local env
+.env
+*.local
+
+# Training data and generated artifacts
+qwen-edit-gongbi-lora-train/data/**/images/*
+qwen-edit-gongbi-lora-train/data/**/metadata.json
+qwen-edit-gongbi-lora-train/outputs/*
+qwen-edit-gongbi-lora-train/logs/*
+
+# Inference artifacts
+qwen-edit-gongbi-infer/inputs/*
+qwen-edit-gongbi-infer/outputs/*
+qwen-edit-gongbi-infer/models/*
+
+# Keep placeholder files
+!.gitkeep
+!**/.gitkeep
+
