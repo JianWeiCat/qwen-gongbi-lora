@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local secrets
+.env
+*.local
+configs/*.env
+configs/*.json
+!configs/*.json.example
+!configs/*.env.example
+
+# Pipeline data and manifests
+data/**/raw/
+data/**/candidates/
+data/**/manifests/
+data/**/metadata.json
+data/**/images/*
+
+# Training and validation artifacts
+outputs/*
+logs/*
+
+# Keep placeholders
+!.gitkeep
+!**/.gitkeep
