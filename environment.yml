@@ -1,0 +1,11 @@
+name: qwen-gongbi-lora-tools
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - pillow>=10.0.0
+      - requests>=2.31.0
+      - tqdm>=4.66.0
+      - volcengine-python-sdk[ark]>=4.0.6

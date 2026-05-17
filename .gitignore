@@ -12,22 +12,34 @@ venv/
 .idea/
 .vscode/
 
-# Local env
+# Local secrets
 .env
 *.local
+configs/*.env
+configs/*.json
+!configs/*.json.example
+!configs/*.env.example
 
-# Training data and generated artifacts
+# Pipeline data and manifests
+data/**/raw/
+data/**/candidates/
+data/**/manifests/
+data/**/metadata.json
+data/**/images/*
+
+# Training and validation artifacts
+outputs/*
+logs/*
+
+# Legacy nested project artifacts
 qwen-edit-gongbi-lora-train/data/**/images/*
 qwen-edit-gongbi-lora-train/data/**/metadata.json
 qwen-edit-gongbi-lora-train/outputs/*
 qwen-edit-gongbi-lora-train/logs/*
-
-# Inference artifacts
 qwen-edit-gongbi-infer/inputs/*
 qwen-edit-gongbi-infer/outputs/*
 qwen-edit-gongbi-infer/models/*
 
-# Keep placeholder files
+# Keep placeholders
 !.gitkeep
 !**/.gitkeep
-
