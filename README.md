@@ -106,6 +106,19 @@ python scripts/collect_openverse.py \
   --dataset-dir data/gongbi_v1
 ```
 
+推荐配置 Openverse OAuth 凭据以获得更稳定的 API 限额：
+
+```bash
+export OPENVERSE_CLIENT_ID="your_client_id"
+export OPENVERSE_CLIENT_SECRET="your_client_secret"
+```
+
+采集失败会写入：
+
+```text
+data/gongbi_v1/manifests/openverse_failures.jsonl
+```
+
 手动导入远程已有图片：
 
 ```bash

@@ -1,15 +1,24 @@
 {
   "dataset_dir": "data/gongbi_v1",
   "target_total": 500,
-  "min_width": 1024,
-  "min_height": 1024,
+  "min_long_edge": 1024,
+  "min_short_edge": 768,
   "default_prompt": "Convert the input image into traditional Chinese gongbi painting style. Preserve the subject identity, original composition, spatial structure, fine contours, and important details. Use delicate ink outlines, refined mineral color, layered washes, and elegant traditional Chinese painting texture.",
   "openverse": {
     "endpoint": "https://api.openverse.org/v1/images/",
+    "auth_endpoint": "https://api.openverse.org/v1/auth_tokens/token/",
     "license": "cc0,pdm,by",
+    "size": "large",
+    "source": null,
+    "excluded_source": "wikimedia",
     "page_size": 20,
     "sleep_seconds": 1.0,
-    "user_agent": "qwen-gongbi-lora-dataset/0.1"
+    "request_retries": 4,
+    "download_retries": 3,
+    "backoff_base_seconds": 1.0,
+    "backoff_max_seconds": 60.0,
+    "max_pages_per_query": 50,
+    "user_agent": "qwen-gongbi-lora-dataset/0.2"
   },
   "generation": {
     "provider": "doubao",

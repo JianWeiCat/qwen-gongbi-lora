@@ -100,6 +100,7 @@ def dataset_paths(dataset_dir: Path) -> dict[str, Path]:
         "manifests": dataset_dir / "manifests",
         "final_images": dataset_dir / "images",
         "raw_manifest": dataset_dir / "manifests" / "raw_assets.jsonl",
+        "openverse_failures": dataset_dir / "manifests" / "openverse_failures.jsonl",
         "candidates_manifest": dataset_dir / "manifests" / "candidates.jsonl",
         "reviews_manifest": dataset_dir / "manifests" / "reviews.jsonl",
         "dataset_manifest": dataset_dir / "manifests" / "dataset_manifest.jsonl",
