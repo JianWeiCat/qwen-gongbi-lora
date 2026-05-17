@@ -15,6 +15,7 @@ except ImportError:  # pragma: no cover
 
 
 REQUIRED_KEYS = {"image", "edit_image", "prompt"}
+IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
 
 
 def parse_args() -> argparse.Namespace:
@@ -60,6 +61,14 @@ def main() -> None:
     dataset_dir = args.dataset_dir
     metadata_path = args.metadata or dataset_dir / "metadata.json"
     if not metadata_path.exists():
+        images_dir = dataset_dir / "images"
+        has_images = images_dir.exists() and any(
+            path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES
+            for path in images_dir.iterdir()
+        )
+        if not has_images:
+            print(f"dataset empty: metadata not found: {metadata_path}")
+            return
         raise SystemExit(f"metadata not found: {metadata_path}")
 
     items = load_metadata(metadata_path)
@@ -115,4 +124,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
